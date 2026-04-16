@@ -7,9 +7,11 @@
 
 <title>CodeROblox - Sailor Piece Codes (Updated Daily)</title>
 
-<meta name="description" content="CodeROblox - Free Roblox Sailor Piece codes, updated daily. Working codes, expired codes, ascension requirements, and update countdowns.">
+<meta name="description" content="CodeROblox - Free Roblox Sailor Piece codes. Working codes, expired codes, ascension requirements, and update countdowns. Updated daily.">
 <meta name="keywords" content="Roblox codes, Sailor Piece codes, CodeROblox, working Roblox codes 2026">
-<meta name="author" content="CodeROblox">
+
+<!-- ✅ GOOGLE VERIFICATION (IMPORTANT) -->
+<meta name="google-site-verification" content="ngL7BHw7iHZ5wYOIDfyILO7V9X7YRlmaXQJN8okuqAY" />
 
 <style>
 body{
@@ -92,6 +94,12 @@ button{
   line-height:1.5;
 }
 
+.countdown{
+  font-size:20px;
+  color:#00ffcc;
+  font-weight:bold;
+}
+
 /* COOKIE */
 .cookie{
   position:fixed;
@@ -143,9 +151,10 @@ button{
 <!-- INTRO -->
 <div class="box">
 <h2>🧭 Sailor Piece Codes Hub</h2>
+
 <p class="small">
 CodeROblox provides the latest Sailor Piece Roblox codes, update info, and ascension requirements.
-Codes expire fast, so redeem quickly.
+Codes expire fast so redeem quickly.
 </p>
 
 <p class="small">🌍 Your Timezone: <span id="tz"></span></p>
@@ -154,14 +163,13 @@ Codes expire fast, so redeem quickly.
 <!-- NEXT UPDATE -->
 <div class="box">
 <h2>📅 Next Update: Friday Update ⚔️</h2>
-<p class="small">Live countdown:</p>
-<div id="countdown" style="color:#00ffcc;font-size:20px;font-weight:bold;">Loading...</div>
+<div id="countdown" class="countdown">Loading...</div>
 </div>
 
 <!-- AD -->
 <div class="ad">📢 Advertisement Space</div>
 
-<!-- WORKING -->
+<!-- WORKING CODES -->
 <div class="box">
 <h2>🟢 Working Codes</h2>
 
@@ -183,6 +191,12 @@ Codes expire fast, so redeem quickly.
 <button onclick="copy(this)">Copy</button>
 </div>
 
+<div class="code">
+<span class="c">800KLIKESTYSM</span><br>
+<span class="tag">Asc 2+</span>
+<button onclick="copy(this)">Copy</button>
+</div>
+
 </div>
 
 <!-- AD -->
@@ -201,7 +215,7 @@ Codes expire fast, so redeem quickly.
 
 <!-- COOKIE -->
 <div id="cookie" class="cookie">
-<p>🍪 We use cookies to improve experience on CodeROblox.</p>
+<p>🍪 We use cookies to improve your experience.</p>
 <button onclick="accept()">Accept</button>
 <button onclick="decline()">Decline</button>
 </div>
@@ -211,7 +225,7 @@ Codes expire fast, so redeem quickly.
 
 <script>
 
-// COPY FUNCTION
+// COPY
 function copy(btn){
   let text = btn.parentElement.querySelector(".c").innerText;
   navigator.clipboard.writeText(text);
@@ -227,8 +241,7 @@ function filterCodes(){
   let codes = document.querySelectorAll(".code");
 
   codes.forEach(c=>{
-    let text = c.innerText.toLowerCase();
-    c.style.display = text.includes(input) ? "block" : "none";
+    c.style.display = c.innerText.toLowerCase().includes(input) ? "block" : "none";
   });
 }
 
@@ -273,3 +286,5 @@ function decline(){document.getElementById("cookie").style.display="none";}
 
 </body>
 </html>
+
+
