@@ -1,119 +1,266 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CodeROblox</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #0b0f1a;
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeROblox</title>
 
-    header {
-      background: #111827;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #00ffcc;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+}
 
-    .subtitle {
-      color: #aaa;
-      margin-top: 5px;
-    }
+header{
+  background:#111827;
+  padding:20px;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+  color:#00ffcc;
+}
 
-    .section {
-      margin-top: 30px;
-    }
+.container{
+  padding:15px;
+}
 
-    .code-box {
-      background: #1a1f2e;
-      margin: 15px auto;
-      padding: 20px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-    }
+.box{
+  background:#1a1f2e;
+  padding:15px;
+  border-radius:12px;
+  margin:12px 0;
+}
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #00ffcc;
-      cursor: pointer;
-      font-weight: bold;
-    }
+h2{
+  margin-top:0;
+}
 
-    .msg {
-      margin-top: 10px;
-      color: #00ffcc;
-    }
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#00ffcc;
+  font-weight:bold;
+  font-size:16px;
+}
 
-    .expired {
-      opacity: 0.5;
-    }
-  </style>
+.tag{
+  background:#ffcc00;
+  color:black;
+  padding:5px 10px;
+  border-radius:8px;
+  font-size:12px;
+  display:inline-block;
+  margin-top:5px;
+}
+
+.ad{
+  background:#2a2f3f;
+  padding:20px;
+  text-align:center;
+  border-radius:12px;
+  color:#aaa;
+  margin:20px 0;
+}
+
+.small{
+  color:#aaa;
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* COOKIE */
+.cookie{
+  position:fixed;
+  bottom:10px;
+  left:10px;
+  right:10px;
+  background:#1a1f2e;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 0 10px black;
+}
+
+.cookie button{
+  margin:5px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#00ffcc;
+  font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
 <header>🔥 CodeROblox 🔥</header>
-<p class="subtitle">Your #1 Roblox Codes Website 🚀</p>
 
-<div class="section">
-  <h2>🟢 Working Codes</h2>
+<div class="container">
 
-  <div class="code-box">
-    <h3 id="c1">700KLIKESTYSM</h3>
-    <button onclick="copy('c1','m1')">Copy</button>
-    <p id="m1" class="msg"></p>
-  </div>
+<!-- INTRO -->
+<div class="box">
+<h2>🧭 Sailor Piece Codes Hub</h2>
 
-  <div class="code-box">
-    <h3 id="c2">600KLIKESTY</h3>
-    <button onclick="copy('c2','m2')">Copy</button>
-    <p id="m2" class="msg"></p>
-  </div>
+<p class="small">
+Sailor Piece is a Roblox anime RPG where players explore islands, fight bosses, and unlock abilities.
+Codes are released during milestones, updates, and events.
+</p>
 
-  <div class="code-box">
-    <h3 id="c3">BIGUPDATESOON</h3>
-    <button onclick="copy('c3','m3')">Copy</button>
-    <p id="m3" class="msg"></p>
-  </div>
+<p class="small">
+📅 Codes expire fast (1–7 days usually). Always redeem quickly.
+</p>
 
-  <div class="code-box">
-    <h3 id="c4">QOLUPDATE</h3>
-    <button onclick="copy('c4','m4')">Copy</button>
-    <p id="m4" class="msg"></p>
-  </div>
+<p class="small">
+⬆️ Some codes require Ascension levels (Asc 1 → Asc 5+).
+</p>
+
+<p class="small">
+🌍 Timezone: <span id="tz"></span>
+</p>
 </div>
 
-<div class="section">
-  <h2>🔴 Expired Codes</h2>
+<!-- NEXT UPDATE -->
+<div class="box">
+<h2>📅 Next Update: Friday Update ⚔️</h2>
+<p class="small">Countdown:</p>
+<div id="countdown" style="color:#00ffcc;font-size:20px;font-weight:bold;">Loading...</div>
+</div>
 
-  <div class="code-box expired">
-    <h3>OLDUPDATECODE</h3>
-  </div>
+<!-- AD -->
+<div class="ad">📢 Advertisement Space</div>
 
-  <div class="code-box expired">
-    <h3>RELEASECODE</h3>
-  </div>
+<!-- WORKING CODES -->
+<div class="box">
+<h2>🟢 Working Codes (April 2026)</h2>
+
+<p><b>VERYSORRYFORTHEDELAYGUYS</b></p>
+<span class="tag">Asc 0+</span>
+<button onclick="copy('VERYSORRYFORTHEDELAYGUYS')">Copy</button>
+
+<p><b>ALOTOFNEWCONTENTSEA2</b></p>
+<span class="tag">Asc 0+</span>
+<button onclick="copy('ALOTOFNEWCONTENTSEA2')">Copy</button>
+
+<p><b>1MMEMBERSTYSMGUYS</b></p>
+<span class="tag">Asc 1+</span>
+<button onclick="copy('1MMEMBERSTYSMGUYS')">Copy</button>
+
+<p><b>800KLIKESTYSM</b></p>
+<span class="tag">Asc 2+</span>
+<button onclick="copy('800KLIKESTYSM')">Copy</button>
+
+<p><b>700MVISITSWOWW</b></p>
+<span class="tag">Asc 2+</span>
+<button onclick="copy('700MVISITSWOWW')">Copy</button>
+</div>
+
+<!-- AD -->
+<div class="ad">📢 More Codes Updating Daily</div>
+
+<!-- EXP -->
+<div class="box">
+<h2>🔴 Expired Codes</h2>
+
+<p class="small">SORRYFORTHEDELAY</p>
+<p class="small">UPDATE1</p>
+<p class="small">QOLUPDATE</p>
+<p class="small">RELEASECODE</p>
+<p class="small">10KLIKES</p>
+</div>
+
+<!-- GAME INFO -->
+<div class="box">
+<h2>📊 Game Info</h2>
+
+<p class="small">
+🔥 Codes come from updates, milestones, and apology events.
+</p>
+
+<p class="small">
+⬆️ Ascension system: Some codes require Asc 1–5+ depending on strength.
+</p>
+
+<p class="small">
+⚠️ Codes expire fast after updates (sometimes within days).
+</p>
+</div>
+
+</div>
+
+<!-- COOKIE -->
+<div id="cookiePopup" class="cookie">
+<p>🍪 We use cookies to improve your experience on CodeROblox.</p>
+<button onclick="acceptCookies()">Accept</button>
+<button onclick="declineCookies()">Decline</button>
 </div>
 
 <script>
-function copy(codeId, msgId) {
-  let text = document.getElementById(codeId).innerText;
+
+// COPY
+function copy(text){
   navigator.clipboard.writeText(text);
-
-  let msg = document.getElementById(msgId);
-  msg.innerText = "✅ Copied!";
-
-  setTimeout(() => {
-    msg.innerText = "";
-  }, 2000);
+  alert("Copied: " + text);
 }
+
+// TIMEZONE
+document.getElementById("tz").innerText =
+Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+// COUNTDOWN
+function getFriday(){
+  let now = new Date();
+  let diff = (5 - now.getDay() + 7) % 7;
+  if(diff === 0) diff = 7;
+
+  let f = new Date();
+  f.setDate(now.getDate() + diff);
+  f.setHours(15,0,0,0);
+  return f;
+}
+
+let target = getFriday();
+
+function updateCountdown(){
+  let now = new Date().getTime();
+  let dist = target - now;
+
+  if(dist < 0){
+    document.getElementById("countdown").innerText = "🔥 UPDATE LIVE!";
+    return;
+  }
+
+  let d = Math.floor(dist/(1000*60*60*24));
+  let h = Math.floor((dist%(1000*60*60*24))/(1000*60*60));
+  let m = Math.floor((dist%(1000*60*60))/(1000*60));
+  let s = Math.floor((dist%(1000*60))/1000);
+
+  document.getElementById("countdown").innerText =
+  d+"d "+h+"h "+m+"m "+s+"s";
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+// COOKIE
+function acceptCookies(){
+  localStorage.setItem("cookies","accepted");
+  document.getElementById("cookiePopup").style.display="none";
+}
+
+function declineCookies(){
+  localStorage.setItem("cookies","declined");
+  document.getElementById("cookiePopup").style.display="none";
+}
+
+window.onload = function(){
+  if(localStorage.getItem("cookies")){
+    document.getElementById("cookiePopup").style.display="none";
+  }
+}
+
 </script>
 
 </body>
