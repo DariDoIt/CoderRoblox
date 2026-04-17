@@ -7,10 +7,10 @@
 
 <title>CodeROblox - Sailor Piece Codes (Updated Daily)</title>
 
-<meta name="description" content="CodeROblox - Free Roblox Sailor Piece codes. Working codes, expired codes, ascension requirements, and update countdowns. Updated daily.">
+<meta name="description" content="CodeROblox - Free Roblox Sailor Piece codes. Working codes, expired codes, ascension requirements, and update info. Updated daily.">
 <meta name="keywords" content="Roblox codes, Sailor Piece codes, CodeROblox, working Roblox codes 2026">
 
-<!-- ✅ GOOGLE VERIFICATION (IMPORTANT) -->
+<!-- GOOGLE VERIFICATION -->
 <meta name="google-site-verification" content="ngL7BHw7iHZ5wYOIDfyILO7V9X7YRlmaXQJN8okuqAY" />
 
 <style>
@@ -30,9 +30,7 @@ header{
   color:#00ffcc;
 }
 
-.container{
-  padding:15px;
-}
+.container{padding:15px;}
 
 .box{
   background:#1a1f2e;
@@ -67,6 +65,7 @@ button{
   background:#00ffcc;
   font-weight:bold;
   font-size:16px;
+  cursor:pointer;
 }
 
 .tag{
@@ -94,13 +93,6 @@ button{
   line-height:1.5;
 }
 
-.countdown{
-  font-size:20px;
-  color:#00ffcc;
-  font-weight:bold;
-}
-
-/* COOKIE */
 .cookie{
   position:fixed;
   bottom:10px;
@@ -112,15 +104,6 @@ button{
   text-align:center;
 }
 
-.cookie button{
-  margin:5px;
-  padding:10px;
-  border:none;
-  border-radius:8px;
-  background:#00ffcc;
-}
-
-/* POPUP */
 .popup{
   position:fixed;
   top:20px;
@@ -153,62 +136,67 @@ button{
 <h2>🧭 Sailor Piece Codes Hub</h2>
 
 <p class="small">
-CodeROblox provides the latest Sailor Piece Roblox codes, update info, and ascension requirements.
-Codes expire fast so redeem quickly.
+Latest working codes for Sailor Piece. Codes expire fast so redeem quickly.
 </p>
 
-<p class="small">🌍 Your Timezone: <span id="tz"></span></p>
+<p class="small">🌍 Timezone: <span id="tz"></span></p>
+<p class="small">🕒 Last Updated: <span id="lastUpdate"></span></p>
 </div>
 
 <!-- NEXT UPDATE -->
 <div class="box">
-<h2>📅 Next Update: Friday Update ⚔️</h2>
-<div id="countdown" class="countdown">Loading...</div>
+<h2>📅 Next Update</h2>
+
+<p class="small">🗓️ Expected Date: <b>April 19, 2026</b></p>
+<p class="small">⏰ Time: Around 3:00 PM (UTC)</p>
+<p class="small">⚠️ Update time may change</p>
+
 </div>
 
-<!-- AD -->
 <div class="ad">📢 Advertisement Space</div>
 
 <!-- WORKING CODES -->
 <div class="box">
-<h2>🟢 Working Codes</h2>
+<h2>🟢 Working Codes (Ascension Required)</h2>
 
 <div class="code">
 <span class="c">VERYSORRYFORTHEDELAYGUYS</span><br>
-<span class="tag">Asc 0+</span>
+<span class="tag">Ascension 0+</span>
 <button onclick="copy(this)">Copy</button>
 </div>
 
 <div class="code">
 <span class="c">ALOTOFNEWCONTENTSEA2</span><br>
-<span class="tag">Asc 0+</span>
+<span class="tag">Ascension 0+</span>
 <button onclick="copy(this)">Copy</button>
 </div>
 
 <div class="code">
 <span class="c">1MMEMBERSTYSMGUYS</span><br>
-<span class="tag">Asc 1+</span>
+<span class="tag">Ascension 1+</span>
 <button onclick="copy(this)">Copy</button>
 </div>
 
 <div class="code">
 <span class="c">800KLIKESTYSM</span><br>
-<span class="tag">Asc 2+</span>
+<span class="tag">Ascension 2+</span>
 <button onclick="copy(this)">Copy</button>
 </div>
 
 </div>
 
-<!-- AD -->
 <div class="ad">📢 More Codes Updating Daily</div>
 
 <!-- EXPIRED -->
 <div class="box">
 <h2>🔴 Expired Codes</h2>
-<p class="small">SORRYFORTHEDELAY</p>
+
+<p class="small">RELEASE</p>
 <p class="small">UPDATE1</p>
+<p class="small">SORRY</p>
 <p class="small">QOLUPDATE</p>
 <p class="small">RELEASECODE</p>
+
 </div>
 
 </div>
@@ -225,23 +213,32 @@ Codes expire fast so redeem quickly.
 
 <script>
 
-// COPY
+let lastCopied = "";
+
+// COPY BUTTON (FIXED)
 function copy(btn){
   let text = btn.parentElement.querySelector(".c").innerText;
-  navigator.clipboard.writeText(text);
-
   let popup = document.getElementById("popup");
+
+  if(lastCopied === text){
+    popup.innerText = "Already copied ✔️";
+  } else {
+    navigator.clipboard.writeText(text);
+    popup.innerText = "Copied!";
+    lastCopied = text;
+  }
+
   popup.style.display="block";
-  setTimeout(()=>popup.style.display="none",1500);
+  setTimeout(()=>{
+    popup.style.display="none";
+  },1500);
 }
 
 // SEARCH
 function filterCodes(){
   let input = document.getElementById("search").value.toLowerCase();
-  let codes = document.querySelectorAll(".code");
-
-  codes.forEach(c=>{
-    c.style.display = c.innerText.toLowerCase().includes(input) ? "block" : "none";
+  document.querySelectorAll(".code").forEach(c=>{
+    c.style.display = c.innerText.toLowerCase().includes(input) ? "block":"none";
   });
 }
 
@@ -249,34 +246,9 @@ function filterCodes(){
 document.getElementById("tz").innerText =
 Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-// COUNTDOWN
-function getFriday(){
-  let now = new Date();
-  let diff = (5 - now.getDay() + 7) % 7;
-  if(diff===0) diff=7;
-
-  let f = new Date();
-  f.setDate(now.getDate()+diff);
-  f.setHours(15,0,0,0);
-  return f;
-}
-
-let target = getFriday();
-
-function update(){
-  let now = new Date().getTime();
-  let dist = target - now;
-
-  let d = Math.floor(dist/(1000*60*60*24));
-  let h = Math.floor((dist%(1000*60*60*24))/(1000*60*60));
-  let m = Math.floor((dist%(1000*60*60))/(1000*60));
-  let s = Math.floor((dist%(1000*60))/1000);
-
-  document.getElementById("countdown").innerText =
-  d+"d "+h+"h "+m+"m "+s+"s";
-}
-setInterval(update,1000);
-update();
+// LAST UPDATED
+document.getElementById("lastUpdate").innerText =
+new Date().toDateString();
 
 // COOKIE
 function accept(){document.getElementById("cookie").style.display="none";}
@@ -286,5 +258,3 @@ function decline(){document.getElementById("cookie").style.display="none";}
 
 </body>
 </html>
-
-
